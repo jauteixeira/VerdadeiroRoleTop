@@ -1,0 +1,62 @@
+﻿
+
+<main>
+    <div class="cadastro">    
+        <form method="POST" action='@Url.Action("Cadastrar", "Cadastro")'>
+                <div>
+                    <label for="nome">Nome Completo</label>
+                    <br />
+                    <input id="nome" type="text" maxlength="20" minlength="3" name="nome" required/>
+                </div>
+    
+                <div>
+                    <label for="cpf">CPF ou CNPJ</label>
+                    <br />
+                    <input id="cpf" type="text" maxlength="20" minlength="3" name="cpf"required/>
+                </div>
+    
+                <div>
+                    <label for="telefone">Telefone para contato</label>
+                    <br />
+                    <input id="telefone" type="text" maxlength="20" minlength="3" name="telefone" required/>
+                </div>
+                <div>
+                    <label for="senha">Senha</label>
+                    <br />
+                    <input id="senha" type="password" maxlength="20" minlength="3" name="senha" required>
+                </div>
+                <div>
+                    <label for="repetirsenha">Repetir senha</label>
+                    <br />
+                    <input id="repetirsenha" type="password" maxlength="20" minlength="3" name="repetirsenha" required>
+                </div>
+                <div>
+                    <label for="email">E-mail</label>
+                    <br />
+                    <input id="email" type="email" name="email" required/>
+                </div>
+    
+                <!-- <div class="double-field">
+                    <div>
+                        <label for="evento">Evento</label>
+                        <select id="evento" required>
+                            <option value="" disabled selected>Selecione</option>
+                            <option >Casamento</option>
+                            <option>Formatura</option>
+                            <option>Aniversário</option>
+                            <option>Palestra</option>
+                            <option>Boate</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="forma-de-pagamento">Forma de Pagamento</label>
+                        <select id="pagamento">
+                            <option value="" disabled selected>Selecione</option>
+                            <option>Boleto</option>
+                            <option>Cartão de Credito</option>
+                        </select>
+                    </div>
+                </div> -->
+                <input type="submit" value="Finalizar!" />
+            </form>
+        </div>

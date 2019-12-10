@@ -1,0 +1,108 @@
+@model RoleTopOficial.ViewModel.ClienteViewModel
+<!-- <table>
+  <tr>
+    <th>ID</th>
+    <th>Dono do Evento</th>
+    <th>Nome do Evento</th>
+    <th>Data Do Evento</th>
+    <th>Tipo De Evento</th>
+    <th>Numero De Pessoas</th>
+    <th>Situação</th>
+    
+  </tr>
+@foreach(var evento in @Model.Eventos)
+{
+    <tr>
+        <td>@evento.ID</td>
+        <td>@evento.DonoDoEvento</td>
+        <td>@evento.Nome</td>
+        <td>@evento.DataDoEvento</td>
+        <td>@evento.TipoDeEvento</td>
+        <td>@evento.NumeroDePessoas</td>
+        <td>Pendente</td>
+        <form method="POST" action='@Url.Action("Aprovar", "Administrador")'>
+          <input type="hidden" name="ID" value=@evento.ID>
+          <td><input type="submit" name="Aprovar" value="Aprovar"></td>
+        </form>
+        <form method="POST" action='@Url.Action("Cancelar", "Administrador")'>
+          <input type="hidden" name="ID" value=@evento.ID>
+          <td><input type="submit" name="Cancelar" value="Cancelar"></td>
+        </form>
+    </tr>
+
+} -->
+<center>
+
+</table>
+
+    <main>
+        <h2>Dashboard</h2>
+
+        <section id="status-pedidos">
+                <h3>Status dos pedidos</h3>
+                <div id="painel">
+                    <div class="box-status-pedidos aprovados">
+                        <h4>Aprovados</h4>
+                        <p>@Model.Aprovados.Count</p>
+                    </div>
+                    <div class="box-status-pedidos pendentes">
+                        <h4>Pendentes</h4>
+                        <p>@Model.Eventos.Count</p>
+                    </div>
+                    <div class="box-status-pedidos reprovados">
+                        <h4>Reprovados</h4>
+                        <p>@Model.Reprovados.Count</p>
+                    </div>
+                </div>
+            </section>
+        <center>
+
+            <section id="lista-pedidos">
+                    <h3>Lista de pedidos</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th rowspan="2">Nome</th>
+                                <th rowspan="2">Tipo do Evento</th>
+                                <th colspan="2">N° de Pessoas</th>
+                                <th colspan="2" rowspan="2">Aprovar</th>
+                            </tr>
+                            <tr>
+                                <th><i class="fas fa-hamburger"></i></th>
+                                <th><i class="fas fa-mug-hot"></i></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <td colspan="6">
+                                    <p>Pedidos atualizados em @DateTime.Now às 7:41</p>
+                                </td>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            @foreach(var evento in @Model.Eventos)
+                            {
+                                <tr>
+                                    <td>@evento.DonoDoEvento</td>
+                                    <td>@evento.TipoDeEvento</td>
+                                    <td>@evento.NumeroDePessoas</td>
+                                    <td>Pendente</td>
+                                    <form method="POST" action='@Url.Action("Aprovar", "Administrador")'>
+                                    <input type="hidden" name="ID" value=@evento.ID>
+                                    <td><input type="submit" name="Aprovar" value="Aprovar"></td>
+                                    </form>
+                                    <form method="POST" action='@Url.Action("Cancelar", "Administrador")'>
+                                    <input type="hidden" name="ID" value=@evento.ID>
+                                    <td><input type="submit" name="Cancelar" value="Cancelar"></td>
+                                    </form>
+                                </tr>
+
+                            }
+                        </tbody>
+                    </table>
+                </section>
+        </center>
+    </main>
+</center>

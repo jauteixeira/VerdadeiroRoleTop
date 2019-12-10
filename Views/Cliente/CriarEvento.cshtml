@@ -1,0 +1,20 @@
+<center >
+    <div style="width: 50%">
+
+    <h1>ADICIONAR EVENTO: </h1>
+    <form method="POST" action='@Url.Action("CriarEvento", "Cliente")'>
+        <input type="text" name="NomeDoEvento" placeholder="Nome do Evento">
+        <input type="date" name="DataDoEvento" placeholder="Data do Evento">
+        <input type="number" name="QuantidadeDePessoas" pattern="^[0–9]$" min="1" max="1000" placeholder="Quantidade de pessoas">
+        <select name="Pacote">
+            <option value="Normal">Normal</option>
+            <option value="Equipamento de musica">Equipamento de musica</option>
+            <option value="Equipamento de iluminação">Equipamento de iluminação</option>
+            <option value="Segurança especializada">Segurança especializada</option>
+            <option value="OpenBar ">OpenBar</option>
+        </select>
+        <input type="submit">
+    </form>
+
+    </div>
+</center>

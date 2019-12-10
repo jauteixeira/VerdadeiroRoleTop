@@ -1,0 +1,42 @@
+@model RoleTopOficial.ViewModel.ClienteViewModel
+
+
+
+<center>
+<h1 stlye="color:white;">Seus eventos: </h1>
+<table>
+  <tr>
+    <th>Evento</th>
+    <th>Data</th>
+    <th>Adicional</th>
+    <th>Convidadoss</th>
+    <th>Situação</th>
+  </tr>
+    @foreach(var evento in @Model.Eventos)
+    {
+        <tr>
+            <td>@evento.Nome</td>
+            <td>@evento.DataDoEvento</td>
+            <td>@evento.TipoDeEvento</td>
+
+            <td><cemter>@evento.NumeroDePessoas</cemter></td>
+            @if(@evento.Status == 0){
+              <td>Pendente</td>
+            }else if(@evento.Status == 1){
+              <td>Aprovado</td>
+            }else if(@evento.Status == 2){
+              <td>Reprovado</td>
+            }
+            
+        </tr>
+    }
+</table>
+
+<br/>
+<br/>
+  <a  asp-controller="Cliente" asp-action="CriarEvento">
+      <input class="BotaoCriar" type="Submit" value="Criar Evento">
+  </a>
+
+</center>
+

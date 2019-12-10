@@ -1,0 +1,73 @@
+﻿
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="~/css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC&display=swap" rel="stylesheet">
+    <link href="~/css/style-secon.css" rel="stylesheet" type="text/css">
+    <link href="~/css/style2.css" rel="stylesheet" type="text/css">
+    <link href="~/img/logo.png" rel="icon" type="image/x-icon">
+    <title>Rolê Top</title>
+    <!-- <style type="text/css">
+        img {
+            max-width: 100%;
+            width: 600px;
+            height: 400px;
+        }
+        </style> -->
+</head>
+
+<body>
+    <header>
+            <nav>
+                <section id="botoes-do-menu">
+                    <div class="section-container">
+                        <ul>
+                            <li><a asp-controller="Home" asp-action="index">Inicio</a></li>
+                            <li><a href= "">FAQ</a></li>
+                            <li><a href= "">SOBRE A CASA</a></li>
+                            <li><a href= "">TIPOS DE EVENTOS</a></li>
+                            <li><a asp-controller="Cadastrar" asp-action="Cadastro" >CADASTRE-SE</a></li>
+                            <li><a asp-controller="Cadastrar" asp-action="Login" >LOGIN</a></li>
+                        </ul>
+                    </div>
+                </section>
+            </nav>
+
+    @RenderBody()
+
+
+
+       <script>
+            function toggleMobileMenu() {
+                var ul = document.querySelector("nav ul");
+                var commonButtons = document.querySelectorAll("nav .bt-common-menu");
+                var icon = document.querySelector(".icon > i");
+    
+                ul.classList.toggle("mobile-mode");
+    
+                if (icon.classList.contains("fa-bars")) {
+                    icon.classList.remove("fa-bars");
+                    icon.classList.remove("fa");
+    
+                    icon.classList.add("fas");
+                    icon.classList.add("fa-skull");
+                } else {
+                    icon.classList.remove("fas");
+                    icon.classList.remove("fa-skull");
+    
+                    icon.classList.add("fa");
+                    icon.classList.add("fa-bars");
+                }
+    
+                for (var button of commonButtons) {
+                    button.classList.toggle("active");
+                }
+    
+            }
+            
+        </script>
+</body>
+</html>
